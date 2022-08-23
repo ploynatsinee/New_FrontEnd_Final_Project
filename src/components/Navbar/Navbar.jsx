@@ -66,7 +66,7 @@ function Navbar() {
                 {showLogin ? (<div><button onClick={handleClick}><a id='#' className="sign-in"><i className="fa-solid fa-right-to-bracket"></i>Sign in</a></button>
                     <button><a id='#' className="sign-up"><i className="fa-solid fa-user-plus"></i>Sign up</a></button></div>) :
                     <div className="Show__login__complete"><Login />
-                    <div style={{backgroundColor:#F2A950;}} >
+                    <div >
                     <Login_user />
                     </div>
                     <button onClick={handleClick}>Log out </button></div>}
