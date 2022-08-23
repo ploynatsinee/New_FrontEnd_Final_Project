@@ -20,19 +20,11 @@
     "@mui/styled-engine-sc": "^5.8.0",
     "@syncfusion/ej2-react-dropdowns": "^20.2.43",
     "axios": "^0.27.2",
-
-
-    "dotenv": "^16.0.1",
-
-
-    "install": "^0.13.0",
     "node-sass": "^7.0.1",
-    "npm": "^8.16.0",
     "react": "^18.2.0",
     "react-burger-menu": "^3.0.8",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
-    "react-router-dom": "^6.3.0",
     "styled-components": "^5.3.5",
     "vite-plugin-material-ui": "^1.0.1"
   },

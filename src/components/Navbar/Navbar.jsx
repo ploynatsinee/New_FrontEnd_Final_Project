@@ -1,23 +1,51 @@
 import React from "react";
 import './Navbar.css';
-import {useState} from 'react'
+import { useState, useEffect } from 'react';
+import Login from '../Login/Login';
+import Logout from "../Logout/Logout";
+import Login_user from "../Login/Login_user";
+import { color } from "@mui/system";
+
 function Navbar() {
-    const [tabMobile,setTabMobile] = useState(false)
-    const [showNavbar,setShowNavbar] = useState(true)
-    const toggleMobile=()=>{
+    const [tabMobile, setTabMobile] = useState(false)
+    const [showNavbar, setShowNavbar] = useState(true)
+    // Login //
+    const [showLogin, setshowLogin] = useState(true)
+    // Login-mobile //
+    const [showLoginMobile, setshowLoginMobile] = useState(true)
+
+
+
+
+    const handleClick = () => {
+        setshowLogin(!showLogin)
+    }
+
+
+
+
+
+
+    const toggleMobile = () => {
         setTabMobile(!tabMobile)
     }
-    const setNavBar = ()=>{
-        
-        if(window.scrollY >=100){
+    const setNavBar = () => {
+
+        if (window.scrollY >= 200) {
             setShowNavbar(false)
         } else {
             setShowNavbar(true)
         }
     }
-    window.addEventListener('scroll',setNavBar)
+
+
+
+
+
+
+    window.addEventListener('scroll', setNavBar)
     return (
-        <div className={showNavbar ? 'Nav-content':'Nav-content hide'}>
+        <div className={showNavbar ? 'Nav-content' : 'Nav-content hide'}>
             <div className="Nav-content1">
                 <div className="logo">
                     <a href="#home"><img src="/images/logo-removebg-preview.png" /></a>
@@ -28,38 +56,82 @@ function Navbar() {
                     <li>Community</li>
                     <li>Add Post</li>
                     <li>My Activities</li>
-                    
+
                 </ul>
             </div>
-         
+
+
+
             <div className="login-name">
-                    <button><a id='#' className="sign-in"><i class="fa-solid fa-right-to-bracket"></i>Sign in</a></button>
-                    <button><a id='#' className="sign-up"><i class="fa-solid fa-user-plus"></i>Sign up</a></button>
+                {showLogin ? (<div><button onClick={handleClick}><a id='#' className="sign-in"><i className="fa-solid fa-right-to-bracket"></i>Sign in</a></button>
+                    <button><a id='#' className="sign-up"><i className="fa-solid fa-user-plus"></i>Sign up</a></button></div>) :
+                    <div className="Show__login__complete"><Login />
+                    <div style={{backgroundColor:#F2A950;}} >
+                    <Login_user />
+                    </div>
+                    <button onClick={handleClick}>Log out </button></div>}
             </div>
+
+
+
+
+            {/* Mobile */}
             <div className="nav-mobile">
                 <div className="toggle-bar">
-                    <i class="fa-solid fa-bars" onClick={toggleMobile}></i>
+                    <i className="fa-solid fa-bars" onClick={toggleMobile}></i>
                 </div>
-                <div className={tabMobile ? "tab-mobile active":"tab-mobile"}>
+                <div className={tabMobile ? "tab-mobile active" : "tab-mobile"}>
                     <div className="container-mobile">
                         <div className="mobile-login-name">
-                            <button onClick={toggleMobile}><i class="fa-solid fa-right-to-bracket"></i><a id='#' className="sign-in">Sign in</a></button>
-                            <button onClick={toggleMobile}><i class="fa-solid fa-user-plus"></i><a id='#' className="sign-up">Sign up</a></button>
+
+                            {showLogin ?
+                                (
+                                    <div>
+                                        <div >
+                                            <button onClick={() => {
+                                                toggleMobile();
+                                                setshowLogin(false)
+                                            }}><i className="fa-solid fa-right-to-bracket"></i><a id='#' className="sign-in">Sign in</a>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button onClick={toggleMobile}><i className="fa-solid fa-user-plus"></i><a id='#' className="sign-up">Sign up</a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                ) :
+                                <div className="">
+                                    <div>
+                                        <Login />
+                                    </div>
+                                    <div style={{ marginTop: 8, marginBottom: 5 }}>
+                                        <Login_user color="white" />
+                                    </div>
+                                    <div style={{ textAlign: 'center' }}>
+                                        <button onClick={handleClick}>Log out </button>
+                                    </div>
+                                </div>}
+
+
+
+
+
+
                         </div>
-                        <div className = "mobile-ul">
+                        <div className="mobile-ul">
                             <ul className="mobile-nav-ul">
                                 <li onClick={toggleMobile}>Community</li>
                                 <li onClick={toggleMobile}>Add Post</li>
                                 <li onClick={toggleMobile}>My Activities</li>
-                                
+
                             </ul>
                         </div>
-                        
+
                     </div>
                 </div>
-                
+
             </div>
-            
+
         </div>
 
         //     // {/* ===================================MEDIA QUERY========================================== */}

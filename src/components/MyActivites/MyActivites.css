@@ -3,30 +3,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 150px;
+    padding-top: 17%;
 }
-
     
 .h1__weeks {
     display: flex;
-    /* width: 100%;
-    max-width: 798px; */
-    width:70%;
-    max-width: 798px;
-    min-width: 350px;
-    justify-content: space-between;
-    /* background-color: blue; */
-    /* gap: 50px; */
-    align-items: center;
-    
+    justify-content: space-around;
+    gap: 33rem;
 }
-.h1__weeks h1{
-    font-size: clamp(22px,2.5vw,30px);
-    text-align: center;
-    letter-spacing: 1px;
-}
-/*
 
+.h1__weeks > h1{
+ color: red;
+}
 .h1__weeks > button{
     width: 4rem;
     background-color: orange;
@@ -37,7 +25,7 @@
 
 
 /* ==================== MEDIA QUERY ================== */
-/* 
+
 
 @media screen and (max-width :986px) {
 
@@ -58,5 +46,6 @@
     border-radius: 2rem;
 }
 }
-     */
-
+    
+    
+ 

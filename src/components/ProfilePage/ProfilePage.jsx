@@ -2,7 +2,6 @@ import React from "react";
 import "./ProfilePage.css"
 import { useState , useEffect} from "react";
 import MyActivites from "../MyActivites/MyActivities";
-import NavbarMockup from "../NavbarMockup/NavbarMockup";
 import Navbar from "../Navbar/Navbar";
 import axios from "axios";
 
