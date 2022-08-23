@@ -82,10 +82,10 @@ function Navbar() {
                                 ) :
                                 <div className="">
                                     <div>
-                                        <Login />
+                                        {/* <Login /> */}
                                     </div>
                                     <div style={{ marginTop: 8, marginBottom: 5 }}>
-                                        <Login_user color="white" />
+                                        {/* <Login_user color="white" /> */}
                                     </div>
                                     <div style={{ textAlign: 'center' }}>
                                         <button onClick={handleClick}>Log out </button>
