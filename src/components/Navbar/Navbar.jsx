@@ -14,17 +14,9 @@ function Navbar() {
     // Login-mobile //
     const [showLoginMobile, setshowLoginMobile] = useState(true)
 
-
-
-
     const handleClick = () => {
         setshowLogin(!showLogin)
     }
-
-
-
-
-
 
     const toggleMobile = () => {
         setTabMobile(!tabMobile)
@@ -37,11 +29,6 @@ function Navbar() {
             setShowNavbar(true)
         }
     }
-
-
-
-
-
 
     window.addEventListener('scroll', setNavBar)
     return (
@@ -59,22 +46,15 @@ function Navbar() {
 
                 </ul>
             </div>
-
-
-
             <div className="login-name">
                 {showLogin ? (<div><button onClick={handleClick}><a id='#' className="sign-in"><i className="fa-solid fa-right-to-bracket"></i>Sign in</a></button>
                     <button><a id='#' className="sign-up"><i className="fa-solid fa-user-plus"></i>Sign up</a></button></div>) :
-                    <div className="Show__login__complete"><Login />
+                    <div className="Show__login__complete">
                     <div >
-                    <Login_user />
+                    {/* <Login_user /> */}
                     </div>
                     <button onClick={handleClick}>Log out </button></div>}
             </div>
-
-
-
-
             {/* Mobile */}
             <div className="nav-mobile">
                 <div className="toggle-bar">
@@ -111,12 +91,6 @@ function Navbar() {
                                         <button onClick={handleClick}>Log out </button>
                                     </div>
                                 </div>}
-
-
-
-
-
-
                         </div>
                         <div className="mobile-ul">
                             <ul className="mobile-nav-ul">
@@ -126,42 +100,11 @@ function Navbar() {
 
                             </ul>
                         </div>
-
                     </div>
                 </div>
-
             </div>
-
         </div>
-
-        //     // {/* ===================================MEDIA QUERY========================================== */}
-
-        // {/* <div className="Nav-mobile">
-        //     <div className="logo-mobile">
-        //         <img src="/images/logo-removebg-preview.png" />
-        //     </div>
-
-        //     <div className="Nav-ui-mobile">
-        //         <div id="myLinks">
-        //             <li><a href="#Community" id='#community'><img src="../images/283-2836870_community-icon-transparent-background-png-download-transparent-transparent.png" alt="Community" /></a></li>
-        //             <li><a href="Workout" id='#workout'><img src="../images/illust58-5797-01.jpg" alt="Community" /></a></li>
-        //             <li><a href="Recipes" id='#recipes'><img src="../images/2389105.png" alt="Community" /></a></li>
-        //             <li><a href="Goals" id='#goals'><img src="../images/png-clipart-arrow-target-practicing-board-cartoon-cartoon-target-miscellaneous-cartoon-character.png" alt="Community" /></a></li>
-
-
-        //             <div className="login-name-mobile">
-        //                 <button><a href="#" id='#' className="sign-in">Sign in</a></button>
-        //                 <button><a href="#" id='#' className="sign-up">Sign up</a></button>
-        //             </div>
-        //         </div>
-
-
-
-        //     </div>
-        // </div> */}
-
-        // {/* </div> */}
-
+       
 
     )
 };
